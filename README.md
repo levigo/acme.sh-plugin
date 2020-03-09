@@ -16,7 +16,11 @@ sudo apt install git socat
 cd /tmp/
 git clone https://github.com/Neilpang/acme.sh.git
 cd acme.sh/
-sudo ./acme.sh --install --home /opt/acme.sh --config-home /etc/acme.sh --cert-home /etc/acme.sh/certs --accountemail "<your-email@example.com>"
+sudo ./acme.sh --install \
+               --home /opt/acme.sh \
+               --config-home /etc/acme.sh \
+               --cert-home /etc/acme.sh/certs \
+               --accountemail "<your-email@example.com>"
 ```
 
 
@@ -38,20 +42,28 @@ Afterwards, you are ready to issue Let's-Encrypt certificates:
 
 ### Single Host 3072-bit RSA-certificate
 ```bash
-sudo acme.sh --home /opt/acme.sh --config-home /etc/acme.sh/ --issue --keylength 3072 --dns dns_levigo --domain myhost.example.com
+sudo acme.sh --home /opt/acme.sh --config-home /etc/acme.sh/ \
+             --issue --keylength 3072 --dns dns_levigo \
+             --domain myhost.example.com
 ```
 
 
 ### Multihost 384-bit ECDSA-certificate
 ```bash
-sudo acme.sh --home /opt/acme.sh --config-home /etc/acme.sh/ --issue --keylength ec-384 --dns dns_levigo --domain www.example.com --doman example.com
+sudo acme.sh --home /opt/acme.sh --config-home /etc/acme.sh/ \
+             --issue --keylength ec-384 --dns dns_levigo \
+             --domain www.example.com --doman example.com
 ```
 
 
 ### Wildcard 384-bit ECDSA-certifcate + 4096-bit RSA-certificate
 ```bash
-sudo acme.sh --home /opt/acme.sh --config-home /etc/acme.sh/ --issue --keylength ec-384 --dns dns_levigo --domain *.example.com
-sudo acme.sh --home /opt/acme.sh --config-home /etc/acme.sh/ --issue --keylength 4096   --dns dns_levigo --domain *.example.com
+sudo acme.sh --home /opt/acme.sh --config-home /etc/acme.sh/ \
+             --issue --keylength ec-384 --dns dns_levigo \
+             --domain *.example.com
+sudo acme.sh --home /opt/acme.sh --config-home /etc/acme.sh/ \
+             --issue --keylength 4096   --dns dns_levigo \
+             --domain *.example.com
 ```
 
 Please refer to the respective website for further infomation about the usage of the [`acme.sh`-script](https://acme.sh/) or [Let's-Encrypt](https://letsencrypt.org/).
