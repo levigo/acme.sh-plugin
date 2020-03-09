@@ -6,10 +6,11 @@ This plugin provides dns-01 validation on [levigo's nameservers](https://hosting
 ## Preparation
 
 * Reqest a levigo ACME-API account using [levigo's user support](https://levigo.de/support/).
+  * You can get multiple accounts restricted to different hostnames/domains or for the use on different hosts.
 
 * Install `acme.sh` from `github.com`.
-** You may choose other folders than in the example given below.
-** It is vital to supply a email address so [Let's-Encrypt](https://letsencrypt.org/) can reach you if there is an issue with one of your certificates 
+  * You may choose other folders than in the example given below.
+  * It is vital to supply a email address so [Let's-Encrypt](https://letsencrypt.org/) can reach you if there is an issue with one of your certificates 
 e.g. your certificates are not being renewed.
 ```bash
 sudo apt install git socat
