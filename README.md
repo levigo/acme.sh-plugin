@@ -1,6 +1,6 @@
 # Plugin for `acme.sh` using levigo's ACME-API
 
-This plugin provides dns-01 validation on [levigo's nameservers](https://hosting.levigo.de/) for usage with [Let's-Encrypt](https://letsencrypt.org/).
+This plugin provides [RFC8555 dns-01 validation](https://tools.ietf.org/html/rfc8555#section-8.4) on [levigo's nameservers](https://hosting.levigo.de/) for usage with [Let's-Encrypt](https://letsencrypt.org/).
 
 
 ## Preparation
