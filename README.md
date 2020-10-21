@@ -67,6 +67,22 @@ sudo acme.sh --home /opt/acme.sh --config-home /etc/acme.sh/ \
              --domain *.example.com
 ```
 
+### Using DNS alias mode
+This is useful for zones that are not served by levigo nameservers.
+
+Setup a permanent `CNAME` with a preceeding `_acme-challenge.` before the hostname you want a certificate for.
+```bash
+_acme-challenge.myhost.example.com   IN CNAME   _acme-challenge.myhost.example.com.acme.levigo.net
+```
+Issue the certificate:
+```bash
+sudo acme.sh --home /opt/acme.sh --config-home /etc/acme.sh/ \
+             --issue --keylength 3072 --dns dns_levigo \
+             --challenge-alias myhost.example.com.acme.levigo.net
+             --domain myhost.example.com
+```
+
+
 Please refer to the respective website for further infomation about the usage of the [`acme.sh`-script](https://acme.sh/) or [Let's-Encrypt](https://letsencrypt.org/).
 
 
